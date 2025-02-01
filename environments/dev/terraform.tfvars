@@ -9,7 +9,7 @@
   ec2_type = "t2-medium"
   min_size = 1
   max_size = 4
-  desired_size = 2
+  desired_size = 3
 
   db_engine = "mysql"
   db_name= "gitops"

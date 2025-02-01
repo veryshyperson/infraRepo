@@ -1,5 +1,5 @@
 resource "helm_release" "nginx-controller" {
-  depends_on = [ module.eks_blueprints_addons ]
+  depends_on = [ module.eks_blueprints_addons, helm_release.prometheus ]
   name             = "ingress-nginx"
   repository       = "https://kubernetes.github.io/ingress-nginx"
   chart            = "ingress-nginx"

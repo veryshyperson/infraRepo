@@ -56,6 +56,7 @@ module "eks" {
 
       iam_role_additional_policies = {
         SecretsManagerReadWrite = "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
+        EBSCSIDriver           = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
     }
   }
 }
@@ -70,13 +71,13 @@ module "eks" {
   }
 }
 
-# resource "aws_security_group_rule" "allow_all_between_nodes" {
-#   type              = "ingress"
-#   from_port         = 0
-#   to_port           = 0
-#   protocol          = "-1" 
-#   security_group_id = module.eks.node_security_group_id
-#   source_security_group_id = module.eks.node_security_group_id
-# }
+resource "aws_security_group_rule" "allow_all_between_nodes" {
+  type              = "ingress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1" 
+  security_group_id = module.eks.node_security_group_id
+  source_security_group_id = module.eks.node_security_group_id
+}
 
 #aws eks --region us-east-1  update-kubeconfig --name virgin-eks --role-arn arn:aws:iam::058264364931:role/_LocalAdmin
