@@ -5,19 +5,6 @@ provider "aws" {
   }
 }
 
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-    kubectl = {
-      source  = "gavinbunney/kubectl" 
-      version = "~> 1.14"
-    }
-  }
-}
-
 data "aws_eks_cluster" "cluster_name" {
   name       = module.EKS.cluster_name
   depends_on = [module.EKS]
