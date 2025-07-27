@@ -29,7 +29,7 @@ module "eks_blueprints_addons" {
     timeout = 900
     wait = true
   }
-  cert_manager_route53_hosted_zone_arns  = ["arn:aws:route53:::hostedzone/Z042342135LJBKJYB56SB"]
+  cert_manager_route53_hosted_zone_arns  = ["arn:aws:route53:::hostedzone/Z0772463WU88EA5BNPTQ"]
   
   tags = {
     terraform = true

@@ -1,7 +1,7 @@
   region = "us-east-1"
 
   stamp = "virgin"
-  domain = "bokertovmatoki.online"
+  domain = "haredi.net"
 
   vpc_cidr = "10.0.0.0/16"
 

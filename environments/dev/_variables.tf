@@ -30,7 +30,7 @@ variable "ec2_type" {
 
 variable "domain" {
   type = string
-  description = "bokertovmatoki.online"
+  description = "haredi.net"
 }
 
 variable "db_engine" {
